@@ -12,10 +12,14 @@ namespace ConsoleApp1
             {
                 Console.Clear();
                 Console.WriteLine("What do you waaaaannt?");
+                Console.WriteLine(" ");
                 Console.WriteLine("0 = Add Animal");
-                Console.WriteLine("1 = List Animal");
-                Console.WriteLine("2 = List All Animals");
-                Console.WriteLine("3 = GTF outtta here Boi");
+                Console.WriteLine("1 = Add Preset Animals");
+                Console.WriteLine(" ");
+                Console.WriteLine("2 = List Animal");
+                Console.WriteLine("3 = List All Animals");
+                Console.WriteLine(" ");
+                Console.WriteLine("4 = GTF outtta here Boi");
 
                 string answer = Console.ReadLine();
                 switch (answer)
@@ -24,12 +28,21 @@ namespace ConsoleApp1
                         z.Add();
                         break;
                     case "1":
-                        z.List();
+                        string[,] arr =
+                        {
+                            {"Lion", "Weef Woof" },
+                            {"Mouse", "WEEE WOOOO" },
+                            {"Elephant", "Meow Meow" }
+                        };
+                        z.AddPreset(arr);
                         break;
                     case "2":
-                        z.ListAll();
+                        z.List();
                         break;
                     case "3":
+                        z.ListAll();
+                        break;
+                    case "4":
                         run = false;
                         break;
                 }

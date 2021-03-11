@@ -22,32 +22,24 @@ namespace ConsoleApp1
             current++;
         }
 
+        public void AddPreset(string[,] arr)
+        {
+            
+            for (int i = 0; i < (arr.Length / 2); i++)
+            {
+                _animals[i] = new Animal(arr[i,0], arr[i,1]);
+                current++;
+            }
+        }
+
         public void List()
         {
-            bool IsString = false;
-            int answerInt;
-            string answerString;
+            int answer;
             Console.WriteLine("Type the Name or index of the animal");
-            try
-            {
-                answerInt = Convert.ToInt32(Console.ReadLine());
-            }
-            catch (InvalidCastException e)
-            {
-                string answerString = Console.ReadLine();
-                IsString = true;
-            }
-
-            switch (IsString)
-            {
-                case true:
-                    break;
-                case false:
-                    Console.WriteLine(answerInt.ToString() + ": " + _animals[answerInt].ToString());
-                    Console.WriteLine("press any key to continue");
-                    Console.ReadKey();
-                    break;
-            }            
+            answer = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine(answer.ToString() + ": " + _animals[answer].ToString());
+            Console.WriteLine("press any key to continue");
+            Console.ReadKey();     
         }
 
         public void ListAll()
